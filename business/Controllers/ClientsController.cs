@@ -8,9 +8,10 @@ using System.Collections.Generic;
 
 namespace business.Controllers
 {
+
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("clients")]
-    public class ClientsController : Controller
+    public class ClientsController : ControllerBase
     {
         [HttpGet]
         [Route("list")]
