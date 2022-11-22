@@ -13,8 +13,6 @@ namespace business.Resources
             SqlConnection sqlConnection = new SqlConnection(connection_string);
             try
             {
-                System.Diagnostics.Debug.WriteLine("\n\nInicia el Proceso");
-                System.Diagnostics.Debug.WriteLine(sqlConnection);
                 sqlConnection.Open();
                 SqlCommand sqlCommand = new SqlCommand(store_name, sqlConnection);
                 sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
@@ -28,13 +26,10 @@ namespace business.Resources
                 DataTable dataTable= new DataTable();
                 SqlDataAdapter sqlDataAdapter= new SqlDataAdapter(sqlCommand);  
                 sqlDataAdapter.Fill(dataTable);
-                System.Diagnostics.Debug.WriteLine(dataTable);
+                
                 return dataTable;
-                System.Diagnostics.Debug.WriteLine("\n\nExito");
             } catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine("\n\nFallo");
-                System.Diagnostics.Debug.WriteLine(ex);
                 return null;
             }
             finally { sqlConnection.Close(); }

@@ -16,10 +16,8 @@ namespace business.Controllers
         [HttpGet]
         [Route("list")]
         public dynamic list_clients() {
-            System.Diagnostics.Debug.WriteLine("SomeText");
             DataTable tClients = DBConnection.ListAll("client_list");
             string jsonClients = JsonConvert.SerializeObject(tClients);
-            List<Client> clients;
             return new
             {
                 success = true,
