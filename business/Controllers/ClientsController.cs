@@ -28,9 +28,5 @@ namespace business.Controllers
                 }
             };
         }
-
-        // [HttpGet]
-        // [Route("create")]
-        // public dynamic create() { }
     }
 }
